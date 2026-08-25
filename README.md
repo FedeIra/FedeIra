@@ -1,100 +1,69 @@
-![image](https://github.com/user-attachments/assets/0d22c4ac-b5cf-4e22-9325-b2452ceb83ea)
+# Propuesta de README para `FedeIra/My-Profile`
 
-## Hi there 👋, I'm Federico Irarrazaval
+> Versión ajustada tras feedback: especialización más amplia ("integración y conciliación de datos a escala")
+> en vez de "especialista en conciliación de pagos", para no leer como cerrado solo a fintech.
+> Pendientes marcados abajo — copiar todo lo que sigue a la línea de guiones en el `README.md` del repo.
 
-### About Me
-I am a Backend & Full Stack Developer passionate about building scalable and high-performance applications. My expertise lies in backend development with Node.js and TypeScript, where I focus on designing and optimizing APIs, microservices, and cloud-based solutions. Additionally, I have experience in frontend technologies like React, allowing me to develop full stack applications when needed.
+---
 
-I enjoy solving complex backend challenges, designing scalable architectures, and optimizing performance in cloud-based environments. I actively contribute to task organization, responsibility assignment, and workflow optimization in development teams.
+### Federico Irarrázaval
+**Senior Backend Engineer · Systems Integration & Data Reconciliation at Scale · Node.js · TypeScript · AWS · MCP & LLM Integrations**
 
-### Skills and technologies:
+Buenos Aires, Argentina · English C2 · [LinkedIn](https://linkedin.com/in/federico-irarrazaval) · [Portfolio](https://portfolio-fedeira.vercel.app) · fedeirar@gmail.com
 
-🖥️ Backend: Node.js, TypeScript, Fastify, Express.js, Koa.js, PostgreSQL, Sequelize, MongoDB, Mongoose, REST APIs.
+---
 
-📱 Frontend: React, Redux, HTML, CSS, Bootstrap, Chakra UI.
+I'm a backend engineer specialized in **integrating systems and reconciling data at scale** — sales, payments, inventory, orders — across e-commerce and fintech. Currently I design and maintain the reconciliation & promotions platform at **nubceo**, a fintech processing **1M+ transactions/week**; before that, I integrated ERPs with e-commerce platforms at ITGlobers. The problems repeat across domains: idempotency, eventual consistency, conflicting sources of truth, volume.
 
-☁️ Cloud Services: AWS (Lambda, S3, DynamoDB, CloudWatch, SES), Firebase, MongoDB Atlas.
+Before code, I spent 7 years as a senior attorney at Baker McKenzie leading teams of lawyers and paralegals — which is why I end up owning specs, talking to stakeholders, and driving delivery even without a "lead" title.
 
-🛠️ Development Tools:
+Lately I've been building **production AI tooling**: an MCP server shipped to production and dual Claude/Gemini integrations solving the same problem two different ways.
 
-- Version Control: Git | GitHub
-- Deployment Platforms: Vercel | Railway | Heroku
-- Project Management: SCRUM | Trello | JIRA
+---
 
-🎙️ Languages: Spanish (Native) | English (C2 Proficient)
+#### What I've built
 
-### Experience
-##### ITGLOBERS (June 2022 - Present)
+- 🏦 **Payment reconciliation engine** — 97% automatic reconciliation rate, 95% reduction in manual resolution time, across a multi-tenant architecture with per-client rules (chart of accounts, tax treatment, payment providers).
+- 🤖 **MCP server in production** (TypeScript, official SDK) — tools, prompts and resources exposing an internal API over stdio and streamable HTTP, running multi-tenant and authenticated on ECS. *(I built the server logic — auth and infra deploy were owned by others on the team.)*
+- 🔀 **The same problem, two paradigms:** a promotion PDF → structured JSON, solved once as a direct Claude API integration (backend drives the Q&A) and once as an MCP tool (the user's own LLM drives it). Same outcome, opposite control model — happy to walk through the trade-offs.
+- 🧠 **LLM-assisted reconciliation** — for the ~3% of transactions the deterministic engine can't close automatically, a Claude-powered endpoint suggests a reconciliation sequence for a human to review and approve. The model proposes, a person decides — no non-deterministic step touches the ledger directly.
+- 🔌 4+ years integrating external systems and reconciling two sources of truth that never quite agree — ERPs ↔ VTEX (ITGlobers) and sales ↔ payment providers (nubceo). Same muscles, two domains.
 
-Backend development for marketplaces, e-commerce, and other services, building scalable APIs and microservices using Node.js, TypeScript, PostgreSQL, MongoDB, and AWS. Experienced in taking leadership roles within projects, proactively assigning tasks, organizing workflows, and ensuring efficient development processes. Strong background in integrating e-commerce platforms like VTEX IO and designing robust and scalable architectures.
+#### Experience
 
-🔹 Proactive leadership in backend development, facilitating task management, work organization, and team coordination.
+**Senior Backend Engineer — nubceo** · Aug 2024 – Present · Remote
+Fintech · payment & sales reconciliation (1M+ tx/week) · multi-tenant serverless on AWS · MCP server + Claude/Gemini integrations in production.
 
-🔹 Development of RESTful APIs for system integrations using Koa.js, Express.js, and Fastify.
+**Backend Engineer — ITGlobers** · Apr 2022 – Aug 2024 · Remote
+E-commerce/marketplace integrations — VTEX IO, order status, inventory, payment platforms, bulk catalog loads.
 
-🔹 Implementation of secure authentication and authorization with JWT and OAuth2.
+**Senior Attorney — Baker McKenzie** · Aug 2015 – Feb 2022
+Led teams of lawyers and paralegals in labor law. The reason "senior" with 4 years of code holds up: 11 years of professional seniority, not 4.
 
-🔹 Performance and scalability optimization in cloud environments, including enhancements and integrations in serverless architectures with AWS Lambda, S3, DynamoDB, and CloudWatch.
+#### Stack
 
-🔹 Design and development of scalable architectures, following best practices and clean architecture.
+`Node.js` `TypeScript` `PostgreSQL` `AWS (Lambda, DynamoDB, SQS, ECS, API Gateway, RDS, X-Ray)` `Fastify` `Express` `Serverless Framework` · `Model Context Protocol` `Claude API` `Gemini API`
 
+#### Certifications
 
-### Personal Projects
-⚡ Note: Repositories ending with "Learning" contain notes and practice code, while repositories labeled "Project" are actual applications.
+Anthropic — MCP · MCP Advanced &nbsp;|&nbsp; Platzi — Claude AI (×2)
 
-1) KINEMA **([link](https://kinema-entertainment.vercel.app/)):** A movie and TV show streaming platform.
-🛠 Stack: JavaScript, Node.js, Express.js, MongoDB, React, Redux, Chakra UI, Cloudinary, Firebase, Railway, Vercel.
+#### Pinned
 
-2) GAMING & BEYOND **([link](https://gaming-beyond-v2.vercel.app/)):** A single-page app for video game content.
-🛠 Stack: TypeScript, Node.js, Fastify, PostgreSQL, MongoDB, React, Redux, Railway, Vercel.
+- [`Project-Personal-Services`](https://github.com/FedeIra/Project-Personal-Services) — serverless microservices platform (8 Lambdas, DynamoDB w/ GSIs, SQS FIFO + DLQs, least-privilege IAM, X-Ray)
+- `Project-MCP-...` *(pending rename, task 3.2.2)* — production-style MCP server: tools, prompts, resources
+- [`Project-Backend-Movie`](https://github.com/FedeIra/Project-Backend-Movie) — Fastify + TypeScript + Zod REST API
 
-https://user-images.githubusercontent.com/93743323/200690990-41f10a97-5262-4ccd-b519-4ff4a2355f1a.mp4
+---
 
-3) PORFOLIO **([link](https://portfolio-fedeira.vercel.app)):** My personal portfolio showcasing my work.
-🛠 Stack: JavaScript, MongoDB, Email.js, AWS S3, React, Bootstrap, Chakra UI, Vercel.
+📫 Open to Senior Backend / Tech Lead roles — reach out at fedeirar@gmail.com
 
-https://github.com/FedeIra/My-Profile/assets/93743323/43e36c3f-350b-4626-b44a-086a669c7637
+---
 
-4) WEATHER CHANNEL **([link](https://project-weather-fi.vercel.app)):** A weather forecasting app.
-🛠 Stack: Node.js, Express.js, React, Redux, Bootstrap, Chakra UI, Vercel.
+## Notas para vos (no van en el README)
 
-https://github.com/FedeIra/My-Profile/assets/93743323/e829aba4-ad25-4ae6-8f34-f373523785e2
-
-5) ONLINE RESUME **([link](http://fedeira.xyz/)):** An online resume hosted on AWS.
-🛠 Stack: AWS S3, AWS Route53, HTML, CSS.
-
-![image](https://github.com/FedeIra/My-Profile/assets/93743323/d89145d0-0c9d-403a-a190-9febb8ea2227)
-
-6) CALCULATOR **([link](https://calculator-project-fedeira.vercel.app/)):** A simple calculator application.
-🛠 Stack: JavaScript, React, Bootstrap, Chakra UI, CSS, Railway, Vercel.
-
-![image](https://github.com/FedeIra/My-Profile/assets/93743323/72f45435-6e36-4913-b7eb-5a810a88cdff)
-
-7) MUG CLUB E-commerce **([link](https://www.youtube.com/watch?v=ZcsY4dQkY8w&ab_channel=FedericoIrarrazaval)):** An e-commerce platform built entirely on Shopify.
-🛠 Stack: Shopify, HTML, CSS. (No repository available since it was built fully within Shopify.)
-
-![image](https://github.com/FedeIra/My-Profile/assets/93743323/32ff43a2-68ad-4a49-87cc-825e0dd62d19)
-
-8) LIQUIDATION: A backend project that calculates severance payments for termination with cause in Argentina via terminal commands.
-🛠 Stack: Python
-
-🔹 Check out all my projects here 👜: **([portfolio](https://portfolio-fedeira.vercel.app)):**
-
-### 📬 Contact Me
-- 📧 Email: [fedeirar@gmail.com](mailto:fedeirar@gmail.com)
-- 📱 Phone: +54 9 1167887879
-
-### Connect with Me
-<p align="left">
-<a href="https://www.linkedin.com/in/federico-irarr%C3%A1zaval-314b89a1" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="federico irarrázaval" height="30" width="40" /></a>
-<a href="https://www.instagram.com/fedeira/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="federico irarrázaval" height="30" width="40" /></a>
-<a href="https://www.facebook.com/fede.irarrazaval" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="federico irarrázaval" height="30" width="40" /></a>
-</p>
-
-### GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fedeira&layout=compact&langs_count=8&theme=algolia" alt="fedeira" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=fedeira&show_icons=true&theme=algolia" alt="fedeira" />
-</p>
+1. **`[DECIDIR]` grafía del apellido** — usé "Irarrázaval" con tilde. Si en el resto de las superficies eligen sin tilde, es find-replace acá también (decisión 8 del plan).
+2. **Fecha de inicio en ITGlobers** — usé Abr 2022 (mayoría: LinkedIn + portfolio). Sigue pendiente contra Jun 2022 (decisión 7).
+3. **Límite de atribución del MCP respetado** — el paréntesis "auth e infra las hicieron otros" es intencional, no lo borres.
+4. **El repo de MCP sigue sin link real** porque hoy es `MCP-Server-Client-Learning` con TODOs sin implementar (tarea 3.2.1). Cuando esté renombrado y terminado, cambiá la línea de "Pinned" por el link real.
+5. **`fedeira.xyz` no está** — sigue marcado para deprecar (tarea U.3 / 1.9), no lo agregues.
